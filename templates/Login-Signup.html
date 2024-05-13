@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Login and Sign Up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@700&display=swap');
+        body {
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="w-full max-w-lg m-auto bg-white rounded-lg shadow-md p-8">
+        <!-- Replace text with image and add margin bottom, increased size -->
+        <img src="{{ url_for('serve_image', filename='../images/islamic center.png') }}" alt="Islamic Center" class="mx-auto h-64 w-64 mb-16"> <!-- Increased height and width to 64 units each -->
+
+        <form class="space-y-8" id="loginForm">
+            <div>
+                <button type="button" id="loginButton" class="w-full bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-3 px-6 rounded">
+                    Log in
+                </button>
+            </div>
+            <div class="text-sm text-center">
+                Don't have an account? <a href="#" id="registerLink" class="text-blue-500">Continue as guest!</a>
+            </div>
+            <div>
+                <button type="button" id="signupButton" class="w-full bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-3 px-6 rounded">
+                    Sign up
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginButton').addEventListener('click', function() {
+            window.location.href = 'login';
+        });
+
+        document.getElementById('signupButton').addEventListener('click', function() {
+            window.location.href = 'New_Registration';
+        });
+
+        document.getElementById('registerLink').addEventListener('click', function() {
+            window.location.href = 'New_Registration_guest';
+        });
+    </script>
+</body>
+</html>
