@@ -1,0 +1,53 @@
+<html>
+ <head>
+  <title>
+   Registration Form
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <style>
+   body {
+    background-color: #e6eef8;
+   }
+  </style>
+ </head>
+ <body class="flex items-center justify-center h-screen">
+  <div class="bg-white p-8 rounded-lg shadow-lg w-96">
+   <div class="flex flex-col items-center">
+    <img alt="Tarikhi Logo" class="mb-4" height="300" src="islamic center.png" width="300"/>
+    <h1 class="text-2xl font-semibold mb-2">
+     Tarikhi
+    </h1>
+    <h2 class="text-lg mb-4">
+     REGISTRATION
+    </h2>
+    <form class="w-full" action="Login-Signup.html" method="POST">
+     <div class="mb-4">
+      <input class="w-full p-2 border border-gray-300 rounded" placeholder="User Name" type="text" required/>
+     </div>
+     <div class="mb-4">
+      <input class="w-full p-2 border border-gray-300 rounded" placeholder="First Name" type="text" required/>
+     </div>
+     <div class="mb-4">
+      <input class="w-full p-2 border border-gray-300 rounded" placeholder="Last Name" type="text" required/>
+     </div>
+     <div class="mb-4">
+      <input class="w-full p-2 border border-gray-300 rounded" placeholder="Create Password" type="password" required/>
+     </div>
+     <div class="mb-6 flex items-center">
+      <input class="mr-2" id="agree" type="checkbox" required/>
+      <label for="agree">
+       I agree to condition and agreement
+      </label>
+     </div>
+     <button class="w-full bg-gray-800 text-white p-2 rounded hover:bg-gray-700" type="submit">
+      Sign Up!
+     </button>
+    </form>
+    <p class="text-sm text-gray-600 mt-4">
+     © Tarikhi Team
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

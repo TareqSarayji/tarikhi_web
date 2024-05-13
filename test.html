@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>Resource Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        #map {
+            height: 400px;
+        }
+    </style>
+</head>
+<body class="bg-gray-200">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-64 bg-white p-5">
+            <!-- Sidebar content here -->
+        </div>
+        <!-- Main content -->
+        <div class="flex-1 p-5">
+            <div class="bg-white p-5">
+                <div id="map"></div>
+                <br><br>
+                <!-- Search box -->
+                <div class="flex justify-between items-center">
+                    <input type="text" id="searchBox" class="w-full border border-gray-300 px-3 py-2 rounded-lg" placeholder="اسال تاريخي">
+                    <button id="searchButton" class="bg-blue-500 text-white px-4 py-2 rounded-lg ml-3">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Initialize Leaflet map on a default location (Jordan)
+        var map = L.map('map').setView([31.9454, 35.9284], 10); // Amman, Jordan
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        document.getElementById('searchButton').addEventListener('click', function() {
+            var searchTerm = document.getElementById('searchBox').value;
+            // Example: update the map to a new location based on input
+            // This is a static example, replace with geocoding lookup
+            if (searchTerm.toLowerCase() === "amman") {
+                map.setView([31.9454, 35.9284], 13); // Zoom into Amman
+            } else if (searchTerm.toLowerCase() === "aqaba") {
+                map.setView([29.5321, 35.0063], 13); // Zoom into Aqaba
+            } else {
+                alert("Location not found."); // Simple alert if no match found
+            }
+        });
+    </script>
+</body>
+</html>
