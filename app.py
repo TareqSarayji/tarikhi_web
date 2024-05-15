@@ -6,6 +6,26 @@ import faiss
 import numpy as np
 import pickle
 import os
+from transformers import pipeline
+# from transformers import MarianTokenizer, MarianMTModel
+
+# mname = "marefa-nlp/marefa-mt-en-ar"
+# translation_tokenizer = MarianTokenizer.from_pretrained(mname)
+# translation_model = MarianMTModel.from_pretrained(mname)
+
+# def translate(text):
+#     translated_text = [""]
+#     try:
+#         translated_tokens = translation_model.generate(**translation_tokenizer.prepare_seq2seq_batch([input], return_tensors="pt"))
+#         translated_text = [translation_tokenizer.decode(t, skip_special_tokens=True) for t in translated_tokens]
+#     except:
+#         pass
+#     return " ".join(translated_text)
+ 
+
+pipe = pipeline("translation", model="Helsinki-NLP/opus-mt-en-ar")
+
+
 
 app = Flask(__name__)
 
@@ -121,6 +141,12 @@ def tarikhi():
             events.append(event)
     
     return jsonify(events)
+
+@app.route('/translate', methods=['GET', 'POST'])
+def translate():
+    text = request.args.get('text')
+    translated_text = pipe(">>ara<<"+text)[0]['translation_text']
+    return jsonify(translated_text)
 
 if __name__ == "__main__":
     app.run(debug=True)

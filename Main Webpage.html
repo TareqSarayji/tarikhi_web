@@ -1,3 +1,4 @@
+Here you go:
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +41,6 @@
             margin: 0 auto;
             -ms-overflow-style: none;
             scrollbar-width: none;
-            max-width: 1000px;
         }
         .event-container::-webkit-scrollbar {
             display: none;
@@ -53,7 +53,6 @@
             background-color: #e2e8f0;
             color: #2d3748;
             text-align: center;
-
         }
         .flex-1.p-5 {
             padding: 5px 15px;
@@ -62,18 +61,88 @@
             margin: 0 5px;
         }
     </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    
 </head>
 <body class="bg-gray-200">
     <div class="flex h-screen">
         <!-- Sidebar -->
         <div class="w-64 bg-white p-5">
             <div class="text-gray-900 font-bold text-lg mb-2">Resources</div>
-        <div class="mb-4">
-            <ul>
-                {% for resource in resources %}
-                <li class="mb-1"><i class="fas fa-book mr-2"></i>{{ resource }}</li>
-                {% endfor %}
-            </ul>
+            <div class="mb-4">
+                <ul>
+                    <li class="mb-1"><i class="fas fa-book mr-2"></i>        Resource 1
+                    </li>
+                    <li class="mb-1"><i class="fas fa-book mr-2"></i>        Resource 2
+                    </li>
+        <li class="mb-1">
+        <i class="fas fa-book mr-2">
+        </i>
+        Resource 3
+
+    </li>
+        <li class="mb-1">
+        <i class="fas fa-book mr-2">
+        </i>
+        Resource 4
+        </li>
+        <li class="mb-1">
+        <i class="fas fa-book mr-2">
+        </i>
+        Resource 5
+        </li>
+        <li class="mb-1">
+        <i class="fas fa-book mr-2">
+        </i>
+        Resource 6
+        </li>
+        <li class="mb-1">
+        <i class="fas fa-book mr-2">
+        </i>
+        Resource 7
+        </li>
+        <li class="mb-1">
+        <i class="fas fa-book mr-2">
+        </i>
+        Resource 8
+        </li>
+        <li class="mb-1">
+        <i class="fas fa-book mr-2">
+        </i>
+        Resource 9
+        </li>
+        <li class="mb-1">
+        <i class="fas fa-book mr-2">
+        </i>
+        Resource 10
+        </li>
+        <li class="mb-1">
+        <i class="fas fa-book mr-2">
+        </i>
+        Resource 11
+        </li>
+        <li class="mb-1">
+        <i class="fas fa-book mr-2">
+        </i>
+        Resource 12
+        </li>
+        <li class="mb-1">
+        <i class="fas fa-book mr-2">
+        </i>
+        Resource 13
+        </li>
+        <li class="mb-1">
+        <i class="fas fa-book mr-2">
+        </i>
+        Resource 14
+        </li>
+        <li class="mb-1">
+        <i class="fas fa-book mr-2">
+        </i>
+        Resource 15
+        </li>
+        </ul>
         </div>
        
         <div class="text-gray-900 font-bold text-lg mb-2">
@@ -92,28 +161,34 @@
                 <div class="text-3xl font-bold text-green-700"></div>
                 <div class="flex items-center">
 
-                <img src="{{ url_for('serve_image', filename='../images/tarikhi-white.png') }}" alt="Tarikhi Logout" class="header-logo" height="120" width="120">
+                <img src="tarikhi-white.png" alt="Tarikhi Logout" class="header-logo" height="100" width="100">
             </div>
             <div class="flex items-center">
                 <button id="contributeButton" class="bg-green-500 text-white px-4 py-2 rounded mr-2">Contribute</button>
                 <button id="logoutButton" class="bg-red-500 text-white px-4 py-2 rounded mr-2">Logout</button>
-                <div class="text-gray-700">Tareq</div>
+                <div class="text-gray-700">   Tareq '</div>
                 <img src="https://cdn1.iconfinder.com/data/icons/user-interface-design-flat/60/017_-_Male_User-ui-user-interface-avatar-512.png" alt="User Picture" height="60" width="60">
             </div>
         </div>
         <div class="bg-white p-5 mb-5">
             <div class="font-bold text-xl mb-3">Description</div>
-            <textarea class="w-full h-24 p-2 border border-gray-300" id="eventDescription"></textarea>
+            <textarea class="w-full h-24 p-2 border border-gray-300"></textarea>
         </div>
         <div class="flex justify-between items-center mb-5">
             <button id="scrollLeft" class="bg-gray-300 text-gray-800 px-4 py-2 rounded">
                 <i class="fas fa-arrow-left"></i>
             </button>
-            <div class="event-container" id="eventsContainer">
-                <div class="event" desc="event" location="Jordan" onclick="handleEventClick(this)">event</div>
-            
-        </div>
-                   
+            <div class="event-container">
+
+            <div class="event" onclick="handleEventClick(this)">Event 1</div>
+            <div class="event" onclick="handleEventClick(this)">Event 2</div>
+            <div class="event" onclick="handleEventClick(this)">Event 3</div>
+            <div class="event" onclick="handleEventClick(this)">Event 4</div>
+            <div class="event" onclick="handleEventClick(this)">Event 5</div>
+            <div class="event" onclick="handleEventClick(this)">Event 6</div>
+            <div class="event" onclick="handleEventClick(this)">Event 7</div>
+            <div class="event" onclick="handleEventClick(this)">Event 8</div>
+</div>                   
         <button id="scrollRight" class="bg-gray-300 text-gray-800 px-4 py-2 rounded">
             <i class="fas fa-arrow-right"></i>
         </button>
@@ -121,105 +196,27 @@
         <div class="bg-white p-5">
             <div class="bg-white p-5">
                 <!-- Larger Google Maps iframe -->
-                <div id="locationMap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2148298.6894028937!2d35.25918902286582!3d31.945366107609183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151c5e0219cf9b8f%3A0x1f68d1dfcd96861d!2sSaudia Arabia!5e0!3m2!1sen!2s!4v1650840955888!5m2!1sen!2s" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-                           
+                <div id="map" style="height: 400px; width: 100%;"></div>
+
+                          
                 <!-- Multiple empty lines or line break elements for vertical space -->
                 <br><br><br>
-    
+            
+                <!-- Search box -->
+               <!-- Search box -->
 <div class="flex justify-between items-center">
-    <input type="text" id="Query" class="w-full border border-gray-300 px-3 py-2 rounded-lg" placeholder="Ask Tarikhi!">
-    <button onclick="performTarikhi()" class="bg-blue-500 text-white px-4 py-2 rounded-lg ml-3">Search</button>
+    <input type="text" id="googleSearchQuery" class="w-full border border-gray-300 px-3 py-2 rounded-lg" placeholder="Ask Tarikhi!">
+    <button onclick="performGoogleSearch()" class="bg-blue-500 text-white px-4 py-2 rounded-lg ml-3">Search</button>
 </div>
 <script>
     document.getElementById('logoutButton').addEventListener('click', function() {
-        window.location.href = 'Login_Signup';
+        window.location.href = 'Login-Signup.html';
     });
 </script>
 <script>
     document.getElementById('contributeButton').addEventListener('click', function() {
-        window.location.href = 'contributeresource';
+        window.location.href = 'contributeresource.html';
     });
-
-    function parseDate(dateString) {
-        // Split the date string into components
-        var parts = dateString.split('-');
-        var year, month, day;
-        // Check if the year component is at the beginning or at the end
-        if (parts[0].length === 4) {
-            // Format is YYYY-DD-MM
-            year = parseInt(parts[0]);
-            month = parseInt(parts[2]) - 1; // Adjust month index to 0-based
-            day = parseInt(parts[1]);
-        } else {
-            // Format is DD-MM-YYYY
-            year = parseInt(parts[2]);
-            month = parseInt(parts[1]) - 1; // Adjust month index to 0-based
-            day = parseInt(parts[0]);
-        }
-        // Create a new Date object
-        return new Date(year, month, day);
-    }
-    function performTarikhi(){
-        debugger;
-        var query = document.getElementById('Query').value;
-        var url = "/Tarikhi?query=" + query;
-        var eventsContainer = document.getElementById('eventsContainer');
-
-        fetch(url)
-            .then(function(response){
-                return response.json();
-            })
-            .then(function(data){
-                debugger;
-                data.sort(function(a, b) {
-                    // Parse dates and compare
-                    return parseDate(a.date) - parseDate(b.date);
-                });
-                eventsContainer.innerHTML = '';
-                data.forEach(function(item){         
-                    eventsContainer.innerHTML += '<div class="event" onclick="handleEventClick(this)" event-name="' + item['event'] + '" desc="' + item['description'] + '" date="'+ item['date'] +'" location="'+ item['location'] +'"">' + item['event'] + '</div>';
-                });
-            })
-    }
-
-    function handleEventClick(element){
-        debugger;
-        let desc = element.getAttribute('desc');
-        let location = element.getAttribute('location');
-        var eventDescription = document.getElementById('eventDescription');
-        eventDescription.innerHTML = '';
-        var url = "/translate?text=" + desc;
-        fetch(url)
-            .then(function(response){
-                return response.json();
-            })
-            .then(function(data){
-                eventDescription.innerHTML = data;
-            })
-        
-        var locationMap = document.getElementById('locationMap');
-        locationMap.innerHTML = '';
-        locationMap.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2148298.6894028937!2d35.25918902286582!3d31.945366107609183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151c5e0219cf9b8f%3A0x1f68d1dfcd96861d!2s' + location + '!5e0!3m2!1en!2s!4v1650840955888!5m2!1en!2s" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>';
-
-        let detailsList = element.querySelector('.details');
-        if (detailsList) {
-            // If it exists, toggle visibility
-            detailsList.style.display = detailsList.style.display === 'none' ? 'block' : 'none';
-        } else {
-            // If it doesn't exist, create a new list element
-            detailsList = document.createElement('div');
-            detailsList.className = 'details';
-            detailsList.innerHTML = `<div style="background: #f8f9fa; padding: 10px; margin-top: 10px;">
-                                        <ul>
-                                            <li>Name: ${element.getAttribute("event-name")}</li>
-                                            <li>Date: ${element.getAttribute("date")}</li>
-                                            <li>Location:: ${location}</li>
-                                        </ul>
-                                     </div>`;
-            element.appendChild(detailsList);
-        }
-    }
     
     function performGoogleSearch() {
         var query = document.getElementById('googleSearchQuery').value;
@@ -260,7 +257,7 @@
     
     <script>
         document.getElementById('contributeButton').addEventListener('click', function() {
-            window.location.href = 'contributeresource';
+            window.location.href = 'contributeresource.html';
         });
     </script>
    <script>
@@ -280,7 +277,6 @@
                 break;
         }
     });
-    
 
     // Event listeners for button clicks
     buttonLeft.addEventListener('click', function() {
@@ -327,6 +323,38 @@
     eventsContainer.style.outline = 'none'; // Removes the focus outline for aesthetic purposes
 </script>
 
-    
+<script>
+    function handleEventClick(element) {
+        // Check if the clicked event already has a detail list
+        let detailsList = element.querySelector('.details');
+        if (detailsList) {
+            // If it exists, toggle visibility
+            detailsList.style.display = detailsList.style.display === 'none' ? 'block' : 'none';
+        } else {
+            // If it doesn't exist, create a new list element
+            detailsList = document.createElement('div');
+            detailsList.className = 'details';
+            detailsList.innerHTML = `<div style="background: #f8f9fa; padding: 10px; margin-top: 10px;">
+                                        <strong>Details for ${element.textContent}:</strong>
+                                        <ul>
+                                            <li>Detail 1</li>
+                                            <li>Detail 2</li>
+                                            <li>Detail 3</li>
+                                        </ul>
+                                     </div>`;
+            element.appendChild(detailsList);
+        }
+    }
+</script>
+
+<script>
+    var map = L.map('map').setView([31.9454, 35.9284], 7); // Coordinates to center the map on Jordan
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data ©️ <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+        maxZoom: 18,
+    }).addTo(map);
+</script>
+
     </body>
     </html>
